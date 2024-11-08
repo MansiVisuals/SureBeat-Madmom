@@ -1,6 +1,6 @@
 # SureBeat by MansiVisuals
 # Copyright (C) 2024 Mansi Visuals
-# This file is part of SureBeat-Madmom and is licensed under the AGPL-3.0.
+# This file is part of SureBeat and is licensed under the AGPL-3.0.
 # See the LICENSE file in the project root or visit <https://www.gnu.org/licenses/agpl-3.0.html> for details.
 
 import os
