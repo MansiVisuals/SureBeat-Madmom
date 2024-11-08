@@ -4,13 +4,13 @@ import subprocess
 from madmom.audio.signal import Signal
 from madmom.features.onsets import OnsetPeakPickingProcessor, CNNOnsetProcessor
 from madmom.features.beats import RNNBeatProcessor, DBNBeatTrackingProcessor
+import numpy as np
 
 def check_dependencies():
     """Check if Python and required dependencies are installed."""
     try:
-        # Attempt to import required modules
         import madmom
-    except ImportError as e:
+    except ImportError:
         print("Required dependencies are not installed. Please install 'madmom'.")
         sys.exit(1)
     
@@ -30,6 +30,16 @@ def convert_to_wav(input_path):
     print("Conversion successful. Temporary wav file created at:", output_path)
     return output_path
 
+def calculate_bpm(beats):
+    """Calculate BPM (beats per minute) from detected beat times."""
+    if len(beats) < 2:
+        return None  # Not enough beats to calculate BPM
+    # Calculate intervals in seconds, then convert to minutes and calculate BPM
+    intervals = np.diff(beats)
+    avg_interval = np.mean(intervals)
+    bpm = 60 / avg_interval
+    return bpm
+
 def detect_beats_and_tempo(audio_path):
     # Convert audio to WAV format for processing
     wav_path = convert_to_wav(audio_path)
@@ -38,14 +48,14 @@ def detect_beats_and_tempo(audio_path):
     print("Loading WAV file for processing:", wav_path)
     signal = Signal(wav_path, sample_rate=44100)
 
-    # Beat Detection (formerly onset detection)
+    # Beat Detection
     print("Detecting beats...")
     beat_processor = CNNOnsetProcessor()
     peak_picking = OnsetPeakPickingProcessor(fps=100, threshold=0.5, pre_avg=0.15, post_avg=0.15, pre_max=0.05, post_max=0.05)
     beat_activations = beat_processor(signal)
     beats = peak_picking(beat_activations)
 
-    # Tempo Detection (formerly beat detection)
+    # Tempo Detection
     print("Detecting tempo...")
     tempo_processor = RNNBeatProcessor()(wav_path)
     dbn_processor = DBNBeatTrackingProcessor(min_bpm=30, max_bpm=200, fps=100)
@@ -58,6 +68,12 @@ def detect_beats_and_tempo(audio_path):
     print("Detected Beats:")
     for beat_time in beats:
         print(f"BEAT: {beat_time}")
+
+    bpm = calculate_bpm(beats)
+    if bpm:
+        print(f"Estimated BPM: {bpm:.2f}")
+    else:
+        print("Not enough beats detected to estimate BPM.")
 
     print("Detected Tempos:")
     for tempo_time in tempo:
