@@ -9,45 +9,52 @@ SureBeat relies on several key dependencies, including Python, FFmpeg, and madmo
 
 1.1 Install Python
 
-	1.	Check Python Version: SureBeat is tested with Python 3.10 and 3.13, so ensure you have one of these versions installed.
-
+1.	Check Python Version: SureBeat is tested with Python 3.10 and 3.13, so ensure you have one of these versions installed.
+```
 python3 --version
+```
 
-
-	2.	Install Python (if needed):
-	•	Download from the official Python website, or install with Homebrew:
+2.	Install Python (if needed):
+   
+   	•	Download from the official Python website, or install with Homebrew:
 
 https://www.python.org/downloads/
-
+```
 brew install python
-
+```
 
 1.2 Install FFmpeg
 
-	1.	Check FFmpeg: Verify if FFmpeg is installed.
-
+1.	Check FFmpeg: Verify if FFmpeg is installed.
+   
+```
 ffmpeg -version
+```
 
-
-	2.	Install FFmpeg (if needed):
+2.	Install FFmpeg (if needed):
+   
+	•	Download from the official FFmpeg website, or install with Homebrew:
  
-https://ffmpeg.org/download.html download binarie from here and place into /usr/local/bin
+https://ffmpeg.org/download.html download binary for macOS from the website and place into /usr/local/bin
 
+```
 brew install ffmpeg
-
+```
 
 1.3 Install Python Packages and madmom
 
 SureBeat requires the madmom library, along with additional libraries like numpy, scipy, and mido.
-	1.	Install pip packages:
-
+1.	Install pip packages:
+   
+```
 pip3 install numpy scipy mido
+```
 
-	2.	Install madmom:
+2.	Install madmom:
 	•	Install the specific version (0.17) of madmom from the GitHub source:
-
+```
 pip3 install git+https://github.com/CPJKU/madmom.git@main
-
+```
 
 2. Download SureBeat Files
 
@@ -55,44 +62,48 @@ pip3 install git+https://github.com/CPJKU/madmom.git@main
 	•	Download SureBeat.lua and beat_detection.py from the SureBeat repository on GitHub:
 	•	SureBeat.lua
 	•	beat_detection.py
-	2.	Create DaVinci Resolve Directory:
-	•	DaVinci Resolve expects these files in a specific folder. Create the following directory if it does not already exist:
+	2.	Create the SureBeat Directory:
+	•	DaVinci Resolve expects these files in a specific folder: ""/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility/Surebeat"
+		Create the following directory called SureBeat if it does not already exist using finder or the command below in terminal 
 
+```
 mkdir -p "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility/SureBeat"
-
-
-	3.	Place Files in the Directory:
-	•	Move or copy SureBeat.lua and beat_detection.py to the directory:
-
-cp path/to/SureBeat.lua "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility/SureBeat/"
-cp path/to/beat_detection.py "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility/SureBeat/"
-
-3. Verify Setup
+```
+3.	Place Files in the Directory:
+	•	Move or copy SureBeat.lua and beat_detection.py to the directory using finder or terminal command below.
+ 
+```
+cp <path/to/>SureBeat.lua "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility/SureBeat/"
+cp <path/to/>beat_detection.py "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility/SureBeat/"
+```
+4. Verify Setup
 
 To confirm that SureBeat is properly set up, you can perform the following checks:
-	1.	Check Python Installation:
-
+	4.11	Check Python Installation:
+```
 python3 -c "import madmom; print(madmom.__version__)"
+```
+•	This should print 0.17, verifying that madmom is correctly installed.
 
-	•	This should print 0.17, verifying that madmom is correctly installed.
 
-	2.	Check DaVinci Resolve Script Files:
-	•	Open Finder and navigate to:
+4.2	Check DaVinci Resolve Script Files:
+
+•	Open Finder and navigate to (shift+cmd+g):
 
 /Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility/SureBeat/
 
 
-	•	Ensure both SureBeat.lua and beat_detection.py are present.
+•	Ensure both SureBeat.lua and beat_detection.py are present.
 
-	3.	Test the Python Script:
+4.3	Test the Python Script:
 	•	Run the beat_detection.py script from the terminal to check if it works independently:
-
-python3 "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility/SureBeat/beat_detection.py" path/to/your_audio_file.mp3
-
-	•	Replace path/to/your_audio_file.mp3 with an actual audio file path. This command should output beat and tempo information if everything is set up correctly.
+```
+python3 "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility/SureBeat/beat_detection.py" <path/to/your_audio_file.mp3>
+```
+•	Replace path/to/your_audio_file.mp3 with an actual audio file path. This command should output beat and tempo information if everything is set up correctly.
  
 
-4. Using SureBeat in DaVinci Resolve
+5. Using SureBeat in DaVinci Resolve
 
 	1.	Open DaVinci Resolve.
 	2.	Navigate to the Fusion Tab.
