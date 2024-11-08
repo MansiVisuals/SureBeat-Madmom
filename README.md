@@ -88,7 +88,7 @@ To confirm that SureBeat is properly set up, you can perform the following check
 ```
 python3 -c "import madmom; print(madmom.__version__)"
 ```
-•	This should print 0.17, verifying that madmom is correctly installed.
+•	This should return  ```0.17.dev0```, verifying that madmom is correctly installed.
 
 
 4.2	Check DaVinci Resolve Script Files:
