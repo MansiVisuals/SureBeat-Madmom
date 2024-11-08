@@ -113,10 +113,14 @@ python3 "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/S
 Troubleshooting
 
 If you encounter issues, here are a few troubleshooting steps:
-	•	Python Compatibility: Ensure that the Python version used matches the one installed (check with python3 --version).
-	•	Permissions: If you get permissions errors, ensure you have admin rights for placing files in /Library/Application Support/Blackmagic Design.
-	•	Dependency Check: Verify that all required packages are installed by running:
+•	Python Compatibility: Ensure that the Python version used matches the one installed (check with python3 --version).
+ 
+•	Permissions: If you get permissions errors, ensure you have admin rights for placing files in /Library/Application Support/Blackmagic Design.
 
-pip3 show numpy scipy mido madmom
+•	Dependency Check: Verify that all required packages are installed by running:
+
+```
+pip3 show numpy scipy mido madmom ffmpeg
+```
 
 By following these steps, SureBeat should be installed and fully functional in DaVinci Resolve on macOS!
