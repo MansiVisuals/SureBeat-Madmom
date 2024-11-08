@@ -13,10 +13,15 @@ SureBeat relies on several key dependencies, including Python, FFmpeg, and madmo
 ```
 python3 --version
 ```
+Should return 
+```
+# Python 3.9.6
+```
+If it doesn't return anything you need to install python.
 
-2.	Install Python (if needed):
+2.	Install Python (if needed, macOS should have 3.9.6 by default and you don't need to install pyhton):
    
-   	•	Download from the official Python website, or install with Homebrew:
+   	•	Download from the official Python website, or alternativly install with Homebrew:
 
 https://www.python.org/downloads/
 ```
@@ -33,9 +38,9 @@ ffmpeg -version
 
 2.	Install FFmpeg (if needed):
    
-	•	Download from the official FFmpeg website or this repo (recommended), or install with Homebrew:
+	•	Download from the official FFmpeg website (recommended), or alternativly install with Homebrew:
  
-https://ffmpeg.org/download.html download binary for macOS from the website and place into /usr/local/bin
+https://ffmpeg.org/download.html / https://evermeet.cx/ffmpeg/ download the binary for macOS from the website and place into /usr/local/bin
 
 ```
 brew install ffmpeg
