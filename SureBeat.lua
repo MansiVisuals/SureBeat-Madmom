@@ -1,7 +1,7 @@
 -- SureBeat by Mansi Visuals v1.0.0
 
 -- Paths for Python and the Python script
-local python_path = "/usr/local/bin/python3"  -- Update if your path differs (run which python3 in terminal to find yours)
+local python_path = "/usr/bin/python3"  -- Update if your path differs (run command 'which python3' in terminal)
 local beat_detection_script = "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility/SureBeat/beat_detection.py"
 
 -- Temporary variables for audio processing
@@ -12,8 +12,8 @@ local tempo = {}
 function detect_beat_and_tempo(audio_path)
     print("Starting beat and tempo detection with Madmom.")
     
-   -- Construct the command with the updated PATH and standard python3 &  Update if your path differs (run which python3 in terminal to find yours)
-    local command = string.format('PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" "%s" "%s" "%s"', python_path, beat_detection_script, audio_path)
+-- Construct the command using default python3 in the system PATH
+    local command = string.format('PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" python3 "%s" "%s"', beat_detection_script, audio_path)
     print("Running command:", command)
 
     local handle = io.popen(command)
