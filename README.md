@@ -9,7 +9,7 @@ SureBeat relies on several key dependencies, including Python, FFmpeg, and madmo
 
 1.1 Install Python
 
-1.	Check Python Version: SureBeat is tested with Python 3.10 and 3.13, so ensure you have one of these versions installed.
+1.	Check Python Version: SureBeat is tested with Python 3.9.6, 3.10 and 3.13, so ensure you have one of these versions installed.
 ```
 python3 --version
 ```
@@ -33,7 +33,7 @@ ffmpeg -version
 
 2.	Install FFmpeg (if needed):
    
-	•	Download from the official FFmpeg website, or install with Homebrew:
+	•	Download from the official FFmpeg website or this repo (recommended), or install with Homebrew:
  
 https://ffmpeg.org/download.html download binary for macOS from the website and place into /usr/local/bin
 
