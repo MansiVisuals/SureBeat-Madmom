@@ -1,4 +1,7 @@
--- SureBeat by Mansi Visuals v1.0.0
+# SureBeat by MansiVisuals
+# Copyright (C) 2024 Mansi Visuals
+# This file is part of SureBeat and is licensed under the AGPL-3.0.
+# See the LICENSE file in the project root or visit <https://www.gnu.org/licenses/agpl-3.0.html> for details.
 
 -- Paths for Python and the Python script
 local python_path = "/usr/bin/python3"  -- Update if your path differs (run command 'which python3' in terminal)
