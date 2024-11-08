@@ -111,9 +111,10 @@ python3 "/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/S
 5. Using SureBeat in DaVinci Resolve
 
 	1.	Open DaVinci Resolve.
-	2.	Navigate to the Fusion Tab.
-	3.	Access the SureBeat Tool:
-	•	In the Fusion tab, open the scripts menu and select SureBeat to run it.
+	2.	Navigate to Workspace.
+	3.	Navigate to Script:
+ 	4.	Navigate to SureBeat
+ 	5.	Select SureBeat to run it.
 
 Troubleshooting
 
