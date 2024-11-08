@@ -12,8 +12,8 @@ local tempo = {}
 function detect_beat_and_tempo(audio_path)
     print("Starting beat and tempo detection with Madmom.")
     
-    -- Construct the command with the correct PATH included
-    local command = string.format('PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" "%s" "%s" "%s"', python_path, beat_detection_script, audio_path)
+   -- Construct the command with the updated PATH and standard python3
+    local command = string.format('PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" "%s" "%s" "%s"', python_path, beat_detection_script, audio_path)
     print("Running command:", command)
 
     local handle = io.popen(command)
