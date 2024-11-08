@@ -1,4 +1,4 @@
-# SureBeat-Madmom
+# SureBeat
 
 Here’s a step-by-step guide to manually setting up SureBeat on macOS.
 This guide will walk you through installing all required dependencies and configuring SureBeat within DaVinci Resolve.
