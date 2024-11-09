@@ -1,6 +1,13 @@
 # SureBeat
 
-Here’s a step-by-step guide to manually setting up SureBeat on macOS.
+SureBeat is a personal project maintained in my free time. If you find it useful, consider supporting further development: Donate on Ko-Fi:
+[Donate on Ko-Fi](https://ko-fi.com/surebeat)
+
+
+INSTALLATION:
+
+Here’s a step-by-step guide to manually setting up SureBeat on macOS. Read it carefully.
+
 This guide will walk you through installing all required dependencies and configuring SureBeat within DaVinci Resolve.
 
 1. Install Dependencies
@@ -131,3 +138,6 @@ pip3 show numpy scipy mido madmom ffmpeg
 ```
 
 By following these steps, SureBeat should be installed and fully functional in DaVinci Resolve on macOS!
+
+ureBeat is provided “as-is” without warranty of any kind, express or implied. Mansi Visuals is not liable for any claims or damages arising from the use of this software or it's dependencies.
+
